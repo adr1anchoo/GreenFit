@@ -1,68 +1,168 @@
-/* ---------- VARIABLES BÁSICAS ---------- */
-:root {
-  --green-main: #2e7d32;
-  --green-dark: #1b5e20;
+// Variables
+$primary-color: #2e7d32;
+$text-color: #fff;
+$font-family: 'Arial', sans-serif;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* ---------- RESET ---------- */
+// Reset básico
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- GENERALES ---------- */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f5f5f5;
+  font-family: $font-family;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
-.logo {
-  height: 60px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-h2 {
-  color: var(--green-main);
-  font-weight: 700;
+.header {
+  @include flex-center;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: $primary-color;
+  color: $text-color;
+
+  .logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+
+    li a {
+      color: $text-color;
+      text-decoration: none;
+      transition: 0.3s;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
 }
 
-/* Botón genérico en verde */
-.btn-green {
-  background-color: var(--green-main);
-  color: #fff;
-  border: none;
-  padding: 0.75rem 2rem;
-  font-weight: 600;
-  border-radius: 0.5rem;
-  transition: background 0.3s ease;
-}
-.btn-green:hover {
-  background-color: var(--green-dark);
+.main {
+  padding: 2rem 0;
+
+  .slider {
+    @include flex-center;
+    gap: 1rem;
+
+    img {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+
+  .cards {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0;
+
+    .card {
+      background-color: $primary-color;
+      color: $text-color;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .catalogo,
+  .reservas,
+  .rutinas,
+  .descripcion {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      background-color: $primary-color;
+      color: $text-color;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .frase {
+    margin-top: 3rem;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .redes {
+    @include flex-center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    a {
+      color: $primary-color;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
 }
 
-/* Tarjetas del index */
-.card-option {
-  background-color: #e8f5e9;
-  padding: 2rem 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--green-main);
-  transition: transform 0.2s, background 0.3s;
-}
-.card-option:hover {
-  background-color: #c8e6c9;
-  transform: scale(1.05);
-}
-
-/* Evitar overflow horizontal */
-html, body {
-  overflow-x: hidden;
-}
-
-/* Responsive ajustes menores */
+// Responsive
 @media (max-width: 768px) {
-  .form-control.w-50 {
-    width: 100% !important;
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .slider img {
+    width: 90%;
   }
 }
