@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Fit - Inicio</title>
+  <link rel="stylesheet" href="dist/styles.css">
+</head>
+<body>
+  <header class="header container">
+    <img src="assets/Green (2).png" alt="Logo GreenFit" class="logo">
+    <h1 class="titulo">Green Fit</h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="pages/reservas.html">Reservas</a></li>
+        <li><a href="pages/quienes-somos.html">¿Quiénes somos?</a></li>
+        <li><a href="pages/rutinas.html">Rutinas</a></li>
+        <li><a href="pages/catalogo.html">Catálogo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main container">
+    <section class="slider">
+      <button class="arrow left">&#9664;</button>
+      <img src="assets/slider1.jpg" alt="Imagen destacada">
+      <button class="arrow right">&#9654;</button>
+    </section>
+
+    <section class="cards">
+      <div class="card" onclick="location.href='pages/reservas.html'">RESERVAS</div>
+      <div class="card" onclick="location.href='pages/quienes-somos.html'">¿QUIÉNES SOMOS?</div>
+      <div class="card" onclick="location.href='pages/rutinas.html'">RUTINAS</div>
+      <div class="card" onclick="location.href='pages/catalogo.html'">CATÁLOGO</div>
+    </section>
+
+    <section class="frase">
+      <p>Tus objetivos, son nuestros objetivos</p>
+    </section>
+
+    <section class="redes">
+      <a href="#">Facebook</a>
+      <a href="#">Whatsapp</a>
+      <a href="#">Instagram</a>
+    </section>
+  </main>
+</body>
+</html>
+
